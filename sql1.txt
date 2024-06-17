@@ -1,39 +1,76 @@
-Hint: So that you can understand the schema, you may want to just do a simple select statement on each
+
+ create mode 100644 myapp/app/models/concerns/.keep
+ create mode 100644 myapp/app/views/layouts/application.html.erb
+ create mode 100644 myapp/app/views/layouts/mailer.html.erb
+ create mode 100644 myapp/app/views/layouts/mailer.text.erb
+ create mode 100644 myapp/app/views/pwa/manifest.json.erb
+ create mode 100644 myapp/app/views/pwa/service-worker.js
+ create mode 100644 myapp/bin/brakeman
+ create mode 100644 myapp/bin/bundle
+ create mode 100644 myapp/bin/docker-entrypoint
+ create mode 100644 myapp/bin/importmap
+ create mode 100644 myapp/bin/rails
+ create mode 100644 myapp/bin/rake
+ create mode 100644 myapp/bin/rubocop
+ create mode 100644 myapp/bin/setup
+ create mode 100644 myapp/config.ru
+ create mode 100644 myapp/config/application.rb
+ create mode 100644 myapp/config/boot.rb
+ create mode 100644 myapp/config/cable.yml
+ create mode 100644 myapp/config/credentials.yml.enc
+ create mode 100644 myapp/config/database.yml
+ create mode 100644 myapp/config/environment.rb
+ create mode 100644 myapp/config/environments/development.rb
+ create mode 100644 myapp/config/environments/production.rb
+ create mode 100644 myapp/config/environments/test.rb
+ create mode 100644 myapp/config/importmap.rb
+ create mode 100644 myapp/config/initializers/assets.rb
+ create mode 100644 myapp/config/initializers/content_security_policy.rb
+ create mode 100644 myapp/config/initializers/filter_parameter_logging.rb
+ create mode 100644 myapp/config/initializers/inflections.rb
+ create mode 100644 myapp/config/initializers/permissions_policy.rb
+ create mode 100644 myapp/config/locales/en.yml
+ create mode 100644 myapp/config/puma.rb
+ create mode 100644 myapp/config/routes.rb
+ create mode 100644 myapp/config/storage.yml
+ create mode 100644 myapp/db/seeds.rb
+ create mode 100644 myapp/lib/assets/.keep
+ create mode 100644 myapp/lib/tasks/.keep
+ create mode 100644 myapp/log/.keep
+ create mode 100644 myapp/public/404.html
+ create mode 100644 myapp/public/406-unsupported-browser.html
+ create mode 100644 myapp/public/422.html
+ create mode 100644 myapp/public/500.html
+ create mode 100644 myapp/public/icon.png
+ create mode 100644 myapp/public/icon.svg
+ create mode 100644 myapp/public/robots.txt
+ create mode 100644 myapp/storage/.keep
+ create mode 100644 myapp/test/application_system_test_case.rb
+ create mode 100644 myapp/test/channels/application_cable/connection_test.rb
+ create mode 100644 myapp/test/controllers/.keep
+ create mode 100644 myapp/test/fixtures/files/.keep
+ create mode 100644 myapp/test/helpers/.keep
+ create mode 100644 myapp/test/integration/.keep
+ create mode 100644 myapp/test/mailers/.keep
+ create mode 100644 myapp/test/models/.keep
+ create mode 100644 myapp/test/system/.keep
+ create mode 100644 myapp/test/test_helper.rb
+ create mode 100644 myapp/tmp/.keep
+ create mode 100644 myapp/tmp/pids/.keep
+ create mode 100644 myapp/tmp/storage/.keep
+ create mode 100644 myapp/vendor/.keep
+ create mode 100644 myapp/vendor/javascript/.keep
+haothai1@DESKTOP-2ROQT31:/mnt/c/Users/hao20/OneDrive/Desktop/sqlintro$ Hint: So that you can understand the schema, you may want to just do a simple select statement on each
 table.  For example, to see the schema for the Products table, you could do:
 
 SELECT * FROM Products LIMIT 5;
 
 1. Use an SQL SELECT statement to retrieve the first 10 rows of the Customer table, ordered by CustomerName.
 Paste your SQL statement below:
-
+SELECT * FROM Customers ORDER BY CustomerName LIMIT 10;
 
 2. Use an SQL Select statement to retrieve the names and prices for all products that cost less than $20.
 Paste your SQL statement below:
-
+SELECT ProductName, Price FROM Products WHERE Price < 20;
 
 3. Retrieve all employees whose last name starts with C.  Paste your SQL statement below:
-
-
-4. Retrieve the order ID and customer name for all orders where the customer name starts with A.
-Here you will have to do a join of the Orders table and the Customers table.  Paste your SQL
-statement below.
-
-
-5. Retrieve the list of customers, ordered by customer name, along with their order IDs.  Note
-that not every customer has an order, but be sure that you include those customers without orders
-in the results of the query.  Paste your SQL statement below.
-
-
-6. Retrieve the list of customer names for customers that have no orders.  There are two ways to do this
-One is to use a subquery, as follows:
-SELECT CustomerName FROM Customers WHERE CustomerID NOT IN (SELECT CustomerID FROM ORDERS);
-
-This is a subquery -- we haven't talked about those.  But, you can do the same thing with a left
-join by comparing the OrderID column with NULL.  Paste your SQL statement below.
-
-
-7. Retrieve the OrderID and ProductName of every order for a product with Tofu in the name.
-Paste your SQL statement below.  You will have to join Orders, OrderDetails, and Products.
-
-
-
